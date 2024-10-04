@@ -15,6 +15,7 @@ use {
     },
     config = function()
         require('taskfile').setup({
+--            task_terminal = "Floaterm",
             prompt_title = "IWHBYD",
             layout_strategy = "center",
             winblend = 10,
@@ -32,6 +33,7 @@ vim.keymap.set('n', '<leader>,', ':lua require("taskfile").pick_task()<CR>', { n
 **defaults**
 ```lua
 local default_opts = {
+    task_terminal = "term",
     prompt_title = "Don't do it.",
     results_title = "Tasks",
     layout_strategy = 'center',
