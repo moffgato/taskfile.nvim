@@ -13,6 +13,14 @@ use {
     requires = {
         'nvim-telescope/telescope.nvim',
     },
+    config = function()
+        require('taskfile').setup({
+            prompt_title = "IWHBYD",
+            layout_strategy = "center",
+            winblend = 10,
+        })
+    end
+}
 ```
 
 **remap.lua**
@@ -21,8 +29,19 @@ use {
 vim.keymap.set('n', '<leader>,', ':lua require("taskfile").pick_task()<CR>', { noremap = true, silent = true })
 ```
 
-
-
+**defaults**
+```lua
+local default_opts = {
+    prompt_title = "Don't do it.",
+    results_title = "Tasks",
+    layout_strategy = 'center',
+    width = 0.5,
+    height = 0.4,
+    border = true,
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+    winblend = 10,
+}
+```
 
 ---
 
