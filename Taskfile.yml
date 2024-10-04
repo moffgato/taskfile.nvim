@@ -1,0 +1,28 @@
+version: '3'
+
+tasks:
+
+  'get:sol:slot':
+    cmds:
+      - "curl -X POST https://api.mainnet-beta.solana.com -H \"Content-Type: application/json\" -d '{\"jsonrpc\":\"2.0\", \"id\":1, \"method\":\"getSlot\"}'"
+
+  'ping':
+    cmds:
+      - 'ping -c 7 8.8.8.8'
+
+  'dev:kernel:msg':
+    cmds:
+      - 'dmesg -w'
+
+  'dev:tcp_dump':
+    cmds:
+      - 'sudo tcpdump -i eth0'
+
+  'dev:ss':
+    cmds:
+      - 'ss -tulwn'
+
+  'dev:dont_stop_belivin':
+    cmds:
+      - 'journalctl -f'
+
