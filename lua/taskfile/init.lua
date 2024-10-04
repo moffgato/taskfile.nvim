@@ -8,6 +8,7 @@ local conf = require('telescope.config').values
 
 
 local default_opts = {
+    task_terminal = "term",
     prompt_title = "Don't do it.",
     results_title = "Tasks",
     layout_strategy = 'center',
@@ -85,7 +86,7 @@ function T.pick_task(opts)
             local function run_task(selected_task)
                 actions.close(prompt_bufnr)
 
-                vim.cmd("term")
+                vim.cmd(opts.task_terminal)
 
                 local command = "task " .. selected_task
                 vim.api.nvim_feedkeys("i" .. command .. "\n", "n", false)
