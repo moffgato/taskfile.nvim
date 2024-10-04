@@ -18,11 +18,9 @@ local default_opts = {
     winblend = 10,
 }
 
-
 function T.setup(user_opts)
     default_opts = vim.tbl_extend('force', default_opts, user_opts or {})
 end
-
 
 function T.pick_task(opts)
     opts = vim.tbl_extend('force', default_opts, opts or {}) -- Merge local opts with global opts
