@@ -45,7 +45,7 @@ function T.setup(user_opts)
     default_opts = vim.tbl_deep_extend('force', default_opts, user_opts or {})
 
     -- Apply custom highlight groups
-    local colors = default_opts.highlightg
+    local colors = default_opts.highlight
 
     -- Define TaskName highlight group
     vim.api.nvim_set_hl(0, "TaskName", {
